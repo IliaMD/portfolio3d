@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Loader, Boxes, Ground } from "./components";
-import { Button } from "@mui/material";
+import { Loader, Boxes, Ground, Navbar, Hero } from "./components";
+import { Button, Box } from "@mui/material";
 import "./App.css";
 import {
   EffectComposer,
@@ -128,7 +128,18 @@ function App() {
           )}
         </Suspense>
       ) : (
-        <div>Page</div>
+        <Box
+          sx={{
+            backgroundImage: "url(/herobg.png)",
+            width: "100%",
+            height: "100vh",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Navbar />
+          <Hero />
+          {/* <Box sx={{ height: "2000px" }}></Box> */}
+        </Box>
       )}
     </>
   );
